@@ -1,0 +1,96 @@
+.outer-chart-tab {
+    border: 1px solid #2c2d2e;
+    border-radius: 10px;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+.inner-chart-tab {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    /* border: 1px solid yellow; */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10rem 1fr; 
+    /* transition: .3s ease; */
+}
+
+.outer-chart-tab .inner-chart-tab .title{
+    grid-row: 1/1;
+    /* border: 1px solid orange; */
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.outer-chart-tab .inner-chart-tab .title .title-grid{
+    display: grid;
+    width: 100%;
+    height: 100%;
+    border: 1px solid yellow;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.outer-chart-tab .inner-chart-tab .title .title-grid .header{
+    grid-column: 1/1;
+    grid-row: 1/1;
+    border: 1px solid orange;
+    font-weight: 500;
+    font-size: 1.2rem;
+    align-self: center;
+    color: whitesmoke;
+}
+
+.outer-chart-tab .inner-chart-tab .title .title-grid .top-btn{
+    grid-column: 1/1;
+    grid-row: 2/2;
+    width: 100%;
+    height: 100%;
+    border: 1px solid wheat;
+    font-weight: 500;
+    font-size: 1.2rem;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.outer-chart-tab .inner-chart-tab .title .title-grid .products{
+    grid-column: 2/2;
+    grid-row: 2/2;
+    border: 1px solid wheat;
+    font-weight: 500;
+    font-size: 1.2rem;
+    align-self: center;
+    color: var(--text-color);
+}
+
+.outer-chart-tab .inner-chart-tab .title .title-grid .profit{
+    grid-column: 3/3;
+    grid-row: 2/2;
+    border: 1px solid wheat;
+    font-weight: 500;
+    font-size: 1.2rem;
+    align-self: center;
+    color: var(--text-color);
+}
+
+.outer-chart-tab .inner-chart-tab .title .title-grid .average{
+    grid-column: 4/4;
+    grid-row: 2/2;
+    border: 1px solid wheat;
+    font-weight: 500;
+    font-size: 1.2rem;
+    align-self: center;
+    color: var(--text-color);
+}
+
+.outer-chart-tab .inner-chart-tab .chart{
+    grid-row: 2/2;
+    border: 1px solid blue;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+

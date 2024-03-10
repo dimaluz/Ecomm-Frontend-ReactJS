@@ -1,0 +1,378 @@
+.log-reg-grid{
+    display: grid;
+    grid-template-columns: 1fr minmax(300px, 27rem) 1fr;
+    grid-template-rows: 1fr minmax(300px, 35rem) 1fr;
+    width: 100%;
+    height: 100%;
+    /* transition: transform .5s ease; */
+    /* transform: scale(0); */
+    /* border: 1px solid red; */
+}
+
+.log-reg-container{
+    grid-column: 2/2;
+    grid-row: 2/2;
+    width: 100%;
+    height: 100%;
+    /* position: relative; */
+    /* border: 1px solid blue; */
+}
+
+.log-reg-tab{
+    grid-column: 2/2;
+    grid-row: 2/2;
+    border: 1px solid #2c2d2e;
+    border-radius: 10px;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    transition: transform 5s;
+    transform-style: preserve-3d;
+}
+
+.log-reg-tab.active {
+    transform: rotateY(.5turn);
+}
+
+.log-tab-content,
+.reg-tab-content{
+    position: absolute;
+    width: 100%; 
+    height: 100%;
+    /* padding: 2rem; */
+    /* border: 1px solid red; */
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+}
+
+.reg-tab-content{
+    transform: rotateY(.5turn);
+}
+
+.log-tab-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px minmax(0, 1fr);
+    margin: 1rem;
+}
+
+.reg-tab-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px minmax(0, 1fr);
+    margin: 1rem;
+    /* transform: rotateY(.5turn); */
+}
+
+.log-tab-grid,
+.reg-tab-grid{
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+}
+
+/*------------------------ Login tab design -----------------------*/
+
+.log-tab-grid .close-btn-container{
+    grid-column: 1/1;
+    grid-row: 1/1;
+    display: flex;
+    /* position: absolute; */
+    right: 0;
+    justify-content: end;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+
+.log-wrapper{
+    grid-column: 1/1;
+    grid-row: 2/2;
+    height: 30rem;
+    width: 100%;
+    /* border: 1px solid red; */
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.login-form{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid greenyellow; */
+    gap: 1.5rem;
+    transform-style: preserve-3d;
+    /* display: none; */
+}
+
+.login-form-title{
+    grid-column: 1/3;
+    grid-row: 1/1;
+    justify-self: center;
+    align-self: center;
+    color: var(--header-color);
+    transform: translateZ(3rem);
+    transform-style: preserve-3d;
+    /* border: 1px solid red; */
+}
+
+.login-form-title h2{
+    font-weight: 300;
+    font-size: 2rem;
+    transform: translateZ(3rem);
+    /* transform-style: preserve-3d; */
+}
+
+.login-input-box1{
+    grid-column: 1/3;
+    grid-row: 2/2;
+    position: relative;
+    transform: translateZ(3rem);
+    /* transform-style: preserve-3d; */
+}
+
+.icon-box1{
+    color: var(--text-color);
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+}
+
+.login-input-box2{
+    grid-column: 1/3;
+    grid-row: 3/3;
+    position: relative;
+    transform: translateZ(3rem);
+}
+
+.icon-box2{
+    color: var(--text-color);
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+}
+
+.login-remember{
+    grid-column: 1/2;
+    grid-row: 4/4;
+    justify-self: center;
+    align-self: center;
+    color: var(--text-color);
+    transform: translateZ(2rem);
+}
+
+.login-forgot{
+    grid-column: 2/3;
+    grid-row: 4/4;
+    justify-self: center;
+    align-self: center;
+    color: var(--text-color);
+    transform: translateZ(2rem);
+}
+
+.login-button{
+    grid-column: 1/3;
+    grid-row: 5/5;
+    position: relative;
+    transform: translateZ(2rem);
+}
+
+.register-link{
+    grid-column: 1/3;
+    grid-row: 6/6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateZ(2rem);
+}
+
+.register-link p{
+    color: var(--text-color);
+    font-weight: 200;
+}
+
+.login-remember label input{
+    accent-color: var(--text-color);
+    margin-right: 4px;
+}
+
+.login-remember label{
+    font-weight: 200;
+}
+
+.login-forgot a{
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 200;
+}
+
+.login-forgot a:hover{
+    text-decoration: underline;
+}
+
+.register-link a{
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.register-link a:hover{
+    text-decoration: underline;
+}
+
+/*------------------------ Registration tab design -----------------------*/
+
+.reg-tab-grid .close-btn-container{
+    grid-column: 1/1;
+    grid-row: 1/1;
+    display: flex;
+    /* position: absolute; */
+    right: 0;
+    justify-content: end;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+
+.reg-wrapper{
+    grid-column: 1/1;
+    grid-row: 2/2;
+    height: 30rem;
+    width: 100%;
+    /* border: 1px solid red; */
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.register-form{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid orange; */
+    /* position: absolute; */
+    transform-style: preserve-3d;
+    gap: 1rem;
+}
+
+.register-form-title{
+    grid-column: 1/3;
+    grid-row: 1/1;
+    justify-self: center;
+    align-self: center;
+    color: var(--header-color);
+    transform-style: preserve-3d;
+    transform: translateZ(3rem);
+    /* border: 1px solid red; */
+}
+
+.register-form-title h2{
+    font-weight: 300;
+    font-size: 2rem;
+    transform: translateZ(3rem);
+}
+
+.register-input-box1{
+    grid-column: 1/3;
+    grid-row: 2/2;
+    position: relative;
+    transform: translateZ(3rem);
+}
+
+.register-icon-box1{
+    color: var(--text-color);
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+}
+
+.register-input-box2{
+    grid-column: 1/3;
+    grid-row: 3/3;
+    position: relative;
+    transform: translateZ(3rem);
+}
+
+.register-icon-box2{
+    color: var(--text-color);
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+}
+
+.register-input-box3{
+    grid-column: 1/3;
+    grid-row: 4/4;
+    position: relative;
+    transform: translateZ(3rem);
+}
+
+.register-icon-box3{
+    color: var(--text-color);
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+}
+
+
+
+.register-agreement{
+    grid-column: 1/3;
+    grid-row: 5/5;
+    justify-self: center;
+    align-self: center;
+    color: var(--text-color);
+    transform: translateZ(2rem);
+}
+
+.register-agreement label input{
+    accent-color: var(--text-color);
+    margin-right: 4px;
+}
+
+.register-agreement label{
+    font-weight: 200;
+}
+
+.register-button{
+    grid-column: 1/3;
+    grid-row: 6/6;
+    position: relative;
+    transform: translateZ(2rem);
+}
+
+.login-link{
+    grid-column: 1/3;
+    grid-row: 7/7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateZ(2rem);
+}
+
+.login-link p{
+    color: var(--text-color);
+    font-weight: 200;
+}
+
+.login-link a{
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.login-link a:hover{
+    text-decoration: underline;
+}

@@ -1,0 +1,37 @@
+.outer-property-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: var(--border-items-color);
+    border-radius: 40px;
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 38px;
+    margin: 3px 3px 3px 3px;
+    position: relative;
+}
+
+.property-button-item {
+    display: block;
+    position: absolute;
+    /* border: 1px solid red; */
+}
+
+.property-container {
+    font-weight: 200;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.outer-property-button:hover {
+    border-color: #e5e7eb;
+}
+
+/* .outer-property-button.selected {
+    border: none;
+    background-color: rgba(111, 3, 244, 0.9);
+} */
+
+.outer-property-button.open .property-button-item .property-container{
+    color: white;
+}

@@ -1,0 +1,148 @@
+.animated-btn{
+    position: absolute;
+    background: var(--btn-color);
+    color: var(--text-color);
+    display: flex;
+    border-radius: 40px;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: .7s ease-in-out;
+}
+
+.animated-btn .img-container{
+    margin-right: .3rem;
+    margin-top: 2%;
+}
+
+.animated-btn.active{
+    font-size: 0;
+    width: 50px;
+    /* background-color: white; */
+    background-color: var(--btn-color);
+}
+
+.progress-wrapper{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    transform: scale(0);
+    transition: .7s;
+    transition-delay: .5s;
+    /* background: yellow; */
+}
+
+.animated-btn.active .progress-wrapper{
+    transform: scale(.6);
+}
+
+.progress-wrapper .inner-progress{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: black;
+    /* background: white; */
+    border-radius: 50%;
+    z-index: 2;
+    transition: 1s ease;
+    transition-delay: 4s;
+}
+
+.animated-btn.active .progress-wrapper .inner-progress{
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.progress-wrapper .bar{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: black;
+    /* background: rgb(122, 121, 121); */
+    border-radius: 50%;
+    clip: rect(0px, 100px, 100px, 50px);
+}
+
+.circle-wrapper .bar .progress{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--btn-color);
+    border-radius: 50%;
+    clip: rect(0px, 50px, 100px, 0px);
+    z-index: 1;
+}
+
+.circle-wrapper .bar.left .progress{
+    transition: 1.5s linear;
+    transition-delay: 1s;
+}
+
+.animated-btn.active .circle-wrapper .bar.left .progress{
+    transform: rotate(180deg);
+}
+
+.circle-wrapper .right{
+    transform: rotate(180deg);
+}
+
+.circle-wrapper .bar.right .progress{
+    transition: 1.5s linear;
+    transition-delay: 2.5s;
+}
+
+.animated-btn.active .circle-wrapper .bar.right .progress{
+    transform: rotate(180deg);
+}
+
+.progress-wrapper .checkmark{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* background: yellowgreen; */
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.checkmark span{
+    position: absolute;
+    display: block;
+    width: 30px;
+    height: 7px;
+    /* background: transparent; */
+    border-radius: 5px;
+    transform-origin: left;
+    transition: .5s;
+}
+
+.checkmark span:first-child{
+    top: 45px;
+    left: 22px;
+    width: 30px;
+    transform: rotate(45deg) scaleX(0);
+    transition-delay: 5s;
+    /* background: white; */
+    background: black;
+}
+
+.animated-btn .checkmark span:first-child{
+    transform: rotate(45deg) scaleX(1);
+}   
+
+.checkmark span:last-child{
+    top: 65px;
+    left: 40px;
+    width: 50px;
+    transform: rotate(-45deg) scaleX(0);
+    transition-delay: 5.5s;
+    /* background: white; */
+    background: black;
+}
+
+.animated-btn .checkmark span:last-child{
+    transform: rotate(-45deg) scaleX(1);
+}   

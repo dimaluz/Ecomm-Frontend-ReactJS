@@ -1,0 +1,543 @@
+.login-register-grid{
+    display: grid;
+    grid-template-columns: 1fr minmax(300px, 27rem) 1fr;
+    grid-template-rows: 1fr minmax(300px, 35rem) 1fr;
+    width: 100%;
+    height: 100%;
+    transition: transform .5s ease;
+    transform: scale(0);
+    /* border: 1px solid red; */
+    /* background-color: red; */
+}
+
+.login-register-grid.active {
+    transform: scale(1);
+    /* background-color: var(--sidebar-color);
+    backdrop-filter: blur(3px); */
+    /* z-index: 100; */
+}
+
+.login-register-container{
+    grid-column: 2/2;
+    grid-row: 2/2;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    /* z-index: 2; */
+    /* border: 1px solid blue; */
+}
+
+
+.login-register-tab{
+    grid-column: 2/2;
+    grid-row: 2/2;
+    border: 1px solid #2c2d2e;
+    border-radius: 10px;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* position: absolute; */
+}
+
+.login-register-tab-wrapper{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px minmax(0, 1fr);
+    margin: 1rem;
+    /* margin-bottom: 1rem; */
+    /* border: 1px solid blue; */
+    /* position: relative; */
+    /* gap: 1.5rem; */
+}
+
+.close-btn-container{
+    grid-column: 1/1;
+    grid-row: 1/1;
+    display: flex;
+    /* position: absolute; */
+    right: 0;
+    justify-content: end;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+
+.login-register-wrapper{
+    grid-column: 1/1;
+    grid-row: 2/2;
+    height: 30rem;
+    width: 100%;
+    /* border: 1px solid red; */
+    position: relative;
+    overflow: hidden;
+    /* transition: height .2s ease; */
+}
+
+/* .login-register-wrapper.active{
+    height: 40rem;
+} */
+
+.register-container .register-form{
+    position: absolute;
+    
+}
+
+.login-container .login-form{
+    position: absolute;
+    /* height: 30rem; */
+}
+
+.login-register-wrapper .login-form{
+    transition: transform .5s ease;
+    transform: translateX(0);
+}
+
+.login-register-wrapper.active .login-form{
+    transition: none;
+    transform: translateX(-500px);
+}
+
+.login-register-wrapper .register-form{
+    position: absolute;
+    transition: none;
+    transform: translateX(500px);
+}
+
+.login-register-wrapper.active .register-form{
+    transition: transform .5s ease;
+    transform: translateX(0);
+}
+
+/*--------------------------------- Login form ---------------------------*/
+.login-container .login-form{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid greenyellow; */
+    gap: 1.5rem;
+    /* display: none; */
+}
+ /*----------------- Login form content */
+
+ .login-form-title{
+    grid-column: 1/3;
+    grid-row: 1/1;
+    justify-self: center;
+    align-self: center;
+    color: var(--header-color);
+    /* border: 1px solid red; */
+}
+
+.login-form-title h2{
+    font-weight: 300;
+    font-size: 2rem;
+}
+
+.login-input-box1{
+    grid-column: 1/3;
+    grid-row: 2/2;
+    position: relative;
+}
+
+.icon-box1{
+    color: var(--text-color);
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+}
+
+.login-input-box2{
+    grid-column: 1/3;
+    grid-row: 3/3;
+    position: relative;
+}
+
+.icon-box2{
+    color: var(--text-color);
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+}
+
+.login-remember{
+    grid-column: 1/2;
+    grid-row: 4/4;
+    justify-self: center;
+    align-self: center;
+    color: var(--text-color);
+}
+
+.login-forgot{
+    grid-column: 2/3;
+    grid-row: 4/4;
+    justify-self: center;
+    align-self: center;
+    color: var(--text-color);
+}
+
+.login-button{
+    grid-column: 1/3;
+    grid-row: 5/5;
+    position: relative;
+}
+
+.register-link{
+    grid-column: 1/3;
+    grid-row: 6/6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-link p{
+    color: var(--text-color);
+    font-weight: 200;
+}
+
+.login-remember label input{
+    accent-color: var(--text-color);
+    margin-right: 4px;
+}
+
+.login-remember label{
+    font-weight: 200;
+}
+
+.login-forgot a{
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 200;
+}
+
+.login-forgot a:hover{
+    text-decoration: underline;
+}
+
+.register-link a{
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.register-link a:hover{
+    text-decoration: underline;
+}
+
+
+/*-------------------------------- Register form -------------------------*/
+
+.register-container .register-form{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid orange; */
+    /* position: absolute; */
+    gap: 1rem;
+}
+
+
+
+/*------------------ Registration form content */
+.register-form-title{
+    grid-column: 1/3;
+    grid-row: 1/1;
+    justify-self: center;
+    align-self: center;
+    color: var(--header-color);
+    /* border: 1px solid red; */
+}
+
+.register-form-title h2{
+    font-weight: 300;
+    font-size: 2rem;
+}
+
+.register-input-box1{
+    grid-column: 1/3;
+    grid-row: 2/2;
+    position: relative;
+}
+
+.register-icon-box1{
+    color: var(--text-color);
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+}
+
+.register-input-box2{
+    grid-column: 1/3;
+    grid-row: 3/3;
+    position: relative;
+}
+
+.register-icon-box2{
+    color: var(--text-color);
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+}
+
+.register-input-box3{
+    grid-column: 1/3;
+    grid-row: 4/4;
+    position: relative;
+}
+
+.register-icon-box3{
+    color: var(--text-color);
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+}
+
+
+
+.register-agreement{
+    grid-column: 1/3;
+    grid-row: 5/5;
+    justify-self: center;
+    align-self: center;
+    color: var(--text-color);
+}
+
+.register-agreement label input{
+    accent-color: var(--text-color);
+    margin-right: 4px;
+}
+
+.register-agreement label{
+    font-weight: 200;
+}
+
+.register-button{
+    grid-column: 1/3;
+    grid-row: 6/6;
+    position: relative;
+}
+
+.login-link{
+    grid-column: 1/3;
+    grid-row: 7/7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-link p{
+    color: var(--text-color);
+    font-weight: 200;
+}
+
+.login-link a{
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.login-link a:hover{
+    text-decoration: underline;
+}
+
+
+/* .login-grid{
+    display: grid;
+    grid-template-columns: 1fr minmax(300px, 27rem) 1fr;
+    grid-template-rows: 1fr minmax(300px, 35rem) 1fr;
+    height: 100vh;
+    border: 1px solid red;
+}
+
+.login-container{
+    grid-column: 2/2;
+    grid-row: 2/2;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border: 1px solid blue;
+}
+
+.login-tab-outer-box{
+    grid-column: 2/2;
+    grid-row: 2/2;
+    border: 1px solid #2c2d2e;
+    border-radius: 10px;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    display: none;
+}
+
+.login-container .login-tab-outer-box{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.login-container.active .login-tab-outer-box{
+    transition: none;
+    transform: translateX(-430px);
+} */
+
+/*----------------------------------- Login form ----------------------------*/
+
+
+
+/* .login-form-title{
+    grid-column: 1/3;
+    grid-row: 2/2;
+    justify-self: center;
+    align-self: center;
+    color: var(--header-color);
+    border: 1px solid red;
+}
+
+.login-form-title h2{
+    font-weight: 300;
+    font-size: 2rem;
+}
+
+.login-input-box1{
+    grid-column: 1/3;
+    grid-row: 3/3;
+    position: relative;
+}
+
+.icon-box1{
+    color: var(--text-color);
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+}
+
+.login-input-box2{
+    grid-column: 1/3;
+    grid-row: 4/4;
+    position: relative;
+}
+
+.icon-box2{
+    color: var(--text-color);
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+}
+
+.login-remember{
+    grid-column: 1/2;
+    grid-row: 5/5;
+    justify-self: center;
+    align-self: center;
+    color: var(--text-color);
+}
+
+.login-forgot{
+    grid-column: 2/3;
+    grid-row: 5/5;
+    justify-self: center;
+    align-self: center;
+    color: var(--text-color);
+}
+
+.login-button{
+    grid-column: 1/3;
+    grid-row: 6/6;
+}
+
+.register-link{
+    grid-column: 1/3;
+    grid-row: 7/7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-link p{
+    color: var(--text-color);
+    font-weight: 200;
+}
+
+.login-remember label input{
+    accent-color: var(--text-color);
+    margin-right: 4px;
+}
+
+.login-remember label{
+    font-weight: 200;
+}
+
+.login-forgot a{
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 200;
+}
+
+.login-forgot a:hover{
+    text-decoration: underline;
+}
+
+.register-link a{
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.register-link a:hover{
+    text-decoration: underline;
+} */
+
+/*------------------------------- Register form -------------------------*/
+
+/* .register-tab-outer-box{
+    grid-column: 2/2;
+    grid-row: 2/2;
+    border: 1px solid #2c2d2e;
+    border-radius: 10px;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    transform: translateX(435px);
+    display: none;
+}
+
+.register-form{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    margin: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid blue;
+    position: relative;
+    gap: 1.5rem;
+    display: none;
+}
+
+.login-link{
+    grid-row: 5/5;
+}
+
+.login-link p{
+    color: var(--text-color);
+    font-weight: 200;
+} */

@@ -1,0 +1,170 @@
+.categories-grid-container {
+    /* border: 1px solid red; */
+    display: grid;
+    width: 100vw;
+    height: 170vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 70px minmax(0, 1fr) minmax(0, 200px);
+    position: relative;
+    /* z-index: 0; */
+}
+
+/*------------------------------ Navbar ------------------------------------*/
+
+.categories-grid-container .categories-grid.navbar{
+    grid-row: 1/1;
+    height: 70px;
+    width: 100%;
+    z-index: 0;
+    position: absolute;
+    /* border: 1px solid blue; */
+}
+
+/*------------------------------ Maincontent -------------------------------*/
+
+.categories-grid-container .categories-grid.maincontent{
+    grid-row: 2/2;
+    height: 100%;
+    width: 100%;
+    /* z-index: 0; */
+}
+
+.categories-grid-container .categories-grid.maincontent .categories-maincontent-grid{
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows: 1fr;
+    /* border: 1px solid orange; */
+}
+
+.categories-grid-container .categories-grid.maincontent .categories-maincontent-grid .categories-inventory{
+    grid-column: 1/1;
+    /* border: 1px solid orange; */
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.categories-grid-container .categories-grid.maincontent .categories-maincontent-grid .categories-inventory h4 {
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin: 10px auto;
+    text-align: center;
+    color: white;
+}
+
+.categories-grid-container .categories-grid.maincontent .categories-maincontent-grid .categories-inventory ul li{
+    display: block;
+    list-style-type: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 50px;
+    text-align: center;
+    transition: .3s ease;
+}
+
+.categories-grid-container .categories-grid.maincontent .categories-maincontent-grid .categories-inventory ul li a{
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.categories-grid-container .categories-grid.maincontent .categories-maincontent-grid .categories-inventory ul li:hover{
+    background-color: var(--btn-color);
+}
+
+.categories-grid-container .categories-grid.maincontent .categories-maincontent-grid .categories-inventory ul li a:hover{
+    background-color: transparent;
+}
+
+
+.categories-grid-container .categories-grid.maincontent .categories-maincontent-grid .categories-products{
+    grid-column: 2/2;
+    /* border: 1px solid orange; */
+    margin-bottom: 1rem;
+    background-color: blue;
+
+}
+
+.ctg-products-container{
+    display: grid;
+    height: 100%;
+    width: 100%;
+    /* border: 1px solid blue; */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 335px));
+    grid-template-rows: repeat(auto-fit, minmax(200px, 335px));
+    justify-content: center;
+    gap: 20px 20px;
+}
+
+.ctg-item{
+    background-color: greenyellow;
+    position: relative;
+    /* z-index: -1; */
+}
+
+.ctg-item .price-box{
+    display: flex;
+    position: absolute;
+    background-color: transparent;
+    margin-top: 16rem;
+    width: 100%;
+    height: 4rem;
+    /* z-index: -1; */
+}
+
+.ctg-item .img-container{
+    display: block;
+    /* position: relative; */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.categories-grid-container .categories-grid.maincontent .categories-maincontent-grid .categories-sort{
+    grid-column: 3/3;
+    /* border: 1px solid orange; */
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+.categories-grid-container .categories-grid.maincontent .categories-maincontent-grid .categories-sort h4 {
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin: 10px auto;
+    text-align: center;
+    color: white;
+}
+.categories-grid-container .categories-grid.maincontent .categories-maincontent-grid .categories-sort ul li{
+    display: block;
+    list-style-type: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 50px;
+    text-align: center;
+    transition: .3s ease;
+}
+
+.categories-grid-container .categories-grid.maincontent .categories-maincontent-grid .categories-sort ul li a{
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.categories-grid-container .categories-grid.maincontent .categories-maincontent-grid .categories-sort ul li:hover{
+    background-color: var(--btn-color);
+}
+
+.categories-grid-container .categories-grid.maincontent .categories-maincontent-grid .categories-sort ul li a:hover{
+    background-color: transparent;
+}
+
+/*------------------------------ Footer ------------------------------------*/
+
+.categories-grid-container .categories-grid.footer{
+    grid-row: 3/3;
+}

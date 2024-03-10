@@ -1,0 +1,721 @@
+.mainwrapper {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+.mainwrapper .basket-sidebar-wrapper{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    z-index: -10;
+    
+}
+
+.mainwrapper.active .basket-sidebar-wrapper.active{
+    z-index: 10;
+}
+
+
+.mainwrapper .screen-block{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    z-index: -10;
+    transition: transform 2s ease, background-color 3s ease;
+}
+
+.mainwrapper.active .screen-block{
+    background-color: var(--sidebar-color);
+    backdrop-filter: blur(3px);
+    z-index: 10;
+}
+
+
+.mainwrapper .login-register-pannel{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transition: transform .5s ease;
+    transform: scale(0);
+    /* background-color: red; */
+    /* z-index: -1; */
+    /* border: 1px solid blue; */
+}
+
+.mainwrapper.active .login-register-pannel.active{
+    transform: scale(1);
+    z-index: 10;
+}
+
+
+.mainwrapper .navbar-container {
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-rows: 70px;
+    /* background-color: blue; */
+    /* border: 1px solid white; */
+    position: absolute;
+    /* position: relative; */
+    overflow: hidden;
+    transition: background-color 1s ease;
+    z-index: 0;
+}
+
+.mainwrapper.active .navbar-container {
+    z-index: 0;
+}
+
+.screen-block.open{
+    background-color: var(--sidebar-color);
+    backdrop-filter: blur(3px);
+    z-index: 1;
+}
+ .navbar-container.open{
+    background-color: var(--sidebar-color);
+    backdrop-filter: blur(2px);
+    z-index: 1;
+}
+
+/* --------- Login page setup -----------*/
+
+
+/* --------------------------------------- */
+
+.basket-sidebar{
+    position: absolute;
+    z-index: 2;
+}
+
+.menu-sidebar{
+    position: absolute;
+    /* z-index: 10; */
+}
+
+.menu-sidebar .menu-sidebar-item.title .title-container{
+    display: none;
+}
+
+.menu-sidebar .menu-sidebar-item.search .search-sidebar-container{
+    display: none;
+}
+
+.menu-sidebar .menu-sidebar-item.list .list-sidebar-container{
+    display: none;
+}
+
+/* --------------------------------- Navbar Container ----------------------- */
+.navbar{
+    grid-column: 1/7;
+    height: 70px;
+}
+
+.nav-wrapper {
+    display: grid;
+    grid-template-columns: 10% 30% 50% 10%;
+    grid-template-areas: "menu_item list_item search_item basket_item";
+}
+
+.logo {
+    justify-self: center;
+    align-self: center;
+    grid-area: menu_item;
+}
+
+/* Menu button design */
+.container-menu_button {
+    display: none;
+}
+
+.menu-items ul {
+    /* border-color: 1px solid red; */
+    /* color: var(--text-color); */
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.menu-items ul li {
+    display: inline;
+    /* border-color: 1px solid red; */
+    list-style-type: none;
+    text-decoration: none;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.menu-items ul li a{
+    text-decoration: none;
+    cursor: pointer;
+    font-family: "Poppins";
+    font-weight: 300;
+    color: var(--text-color);
+    transition: .3s ease;
+}
+
+.menu-items ul li a:hover {
+    color: var(--header-color);
+    transform: scale(1.3);
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+}
+
+.menu-items {
+    grid-area: list_item;
+    justify-self: center;
+    align-self: center;
+}
+
+/* Searchbar design */
+.container-search {
+    /* border: 2px solid red; */
+    min-width: 300px;
+    max-width: 470px;
+    height: 70px;
+    position: relative;
+    grid-area: search_item;
+}
+
+.outer-search {
+    border: var(--border-btn-color);
+    border-radius: 10px;
+    background-color: transparent;
+    width: 450px;
+    min-width: 290px;
+    height: 50px;
+    margin: 10px 7px auto 10px;
+    position: absolute;
+}
+
+.outer-search:hover {
+    border: var(--border-items-color-hover);
+}
+
+.search-bar {
+    width: 100%;
+    max-width: 450px;
+    height: 30px;
+    margin: 8px auto;
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    background: transparent;
+    border: 0;
+    padding: 10px;
+    flex: 1;
+    outline: none;
+    color: var(--text-color);
+    font-family: "Poppins";
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.search-bar button {
+    background-color: transparent;
+    border: 0;
+    padding-right: 10px;
+    padding-top: 7px;
+    transition: .3s ease;
+}
+
+.search-bar button:hover {
+    transform: scale(1.3);
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+}
+
+/* Basket button design */
+.container-basket_button {
+    /* border: 2px solid red; */
+    width: 70px;
+    height: 70px;
+    justify-self: end;
+    position: relative;
+    grid-area: basket_item;
+}
+
+.outer-basket_button {
+    border: var(--border-btn-color);
+    border-radius: 10px;
+    background-color: transparent;
+    width: 50px;
+    height: 50px;
+    margin: 10px auto;
+    position: absolute;
+}
+
+.inner-basket_button {
+    width: 16px;
+    height: 16px;
+    margin: 32% auto;
+    background-color: transparent;
+    padding: auto;
+    transition: .3s ease;
+}
+
+.basket_qty{
+    display:flex;
+    background-color: var(--btn-color);
+    color: var(--header-color);
+    width: 30%;
+    height: 27%;
+    border-radius: 6px;
+    font-size: small;
+    font-family: "Poppins";
+    font-weight: 600;
+    justify-content: center;
+    align-content: center;
+    position: absolute;
+    top: 2px;
+    right: 8px;
+    z-index: 1;
+}
+
+.outer-basket_button:hover {
+    border: var(--border-items-color-hover);
+}
+
+.inner-basket_button:hover {
+    transform: scale(1.3);
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+}
+
+@media screen and (max-width: 1060px){
+    .menu-items ul li {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+}
+
+@media screen and (max-width: 890px){
+    .menu-items ul li {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .outer-search{
+        width: 400px;
+    }
+}
+
+/*---------------------------------- Bar area design --------------------------*/
+/* .basket-sidebar {
+    position: absolute;
+    top: 0;
+    right: -450px;
+    height: 100vh;
+    width: 450px;
+    background-color: var(--sidebar-color);
+    color: var(--header-color);
+    display: grid;
+    border-left: var(--border-btn-color);
+    grid-template-columns: 1fr;
+    grid-template-rows: 70px auto 150px 100px;
+    visibility: hidden;
+    transition: transform .3s, visibility .3s;
+    z-index: 10;
+}
+
+.basket-sidebar-item{
+    background-color: var(--sidebar-color);
+    backdrop-filter: blur(1px);
+}
+
+.basket-sidebar-item.title {
+    display: flex;
+    align-items: center;
+}
+
+.basket-sidebar-item.title h3{
+    font-size: 1.4rem;
+    font-weight: 400;
+    width: 100px;
+    margin: 30px;
+    border: 1px solid red;
+}
+
+.basket-sidebar-item.title .container-cross_button {
+    border: 2px solid red;
+    width: 70px;
+    height: 70px;
+    margin-left: 205px;
+    position: relative;
+}
+
+.basket-sidebar-item.title .outer-cross_button {
+    border: var(--border-btn-color);
+    border-radius: 10px;
+    background-color: black;
+    width: 50px;
+    height: 50px;
+    margin: 10px 10px auto;
+    position: absolute;
+}
+
+.basket-sidebar-item.title .inner-cross_button {
+    width: 24px;
+    height: 24px;
+    margin: 25% auto;
+    background-color: black;
+    padding: auto;
+    transition: .3s ease;
+}
+
+.basket-sidebar-item.title .outer-cross_button:hover {
+    border: var(--border-items-color-hover);
+}
+
+.basket-sidebar-item.title .inner-cross_button:hover {
+    transform: scale(1.3);
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+}
+
+
+
+.container-basket-product-card{
+    display: grid;
+    grid-template-columns: auto-fit;
+    grid-template-rows: 1fr;
+    row-gap: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
+    border: 1px solid rgb(199, 251, 9);
+}
+
+
+.container-price-details{
+    display: grid;
+    grid-template-columns: 20px auto-fit;
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 15px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.container-price-details .price-item{
+    border-bottom: var(--border-btn-color);
+}
+
+.container-price-details .taxes{
+    grid-column: 1/1;
+    grid-row: 1/1;
+}
+.container-price-details .taxes-price{
+    grid-column: 2/2;
+    grid-row: 1/1;
+}
+.price-title {
+    display: block;
+    width: 100%;
+    font-size: 0.9rem;
+    font-weight: 200;
+    color: var(--text-color);
+}
+.price-container{
+    display: block;
+    width: 100%;
+    text-align: end;
+}
+
+.container-price-details .shipping{
+    grid-column: 1/1;
+    grid-row: 2/2;
+}
+.container-price-details .shipping-price{
+    grid-column: 2/2;
+    grid-row: 2/2;
+}
+.container-price-details .total{
+    grid-column: 1/1;
+    grid-row: 3/3;
+}
+
+.container-price-details .total-price{
+    grid-column: 2/2;
+    grid-row: 3/3;
+    padding-right: 0;
+}
+
+.basket-sidebar-item.button .container-price-button{
+    width: 400px;
+    height: 70px;
+    margin-left: 25px;
+    position: relative;
+}
+
+.basket-sidebar.open {
+    transform: translateX(-100%);
+    visibility: visible;
+    z-index: 10;
+} */
+
+
+
+ @media screen and (max-width: 800px){
+    .container-search{
+        display: none;
+    }
+
+    .menu-items{
+        display: none;
+    }
+
+    .nav-wrapper {
+        display: grid;
+        grid-template-columns: 20% 60% 20%;
+        grid-template-areas: 
+        "menu_item logo_item basket_item"
+        ;
+    }
+
+    /* Menu button design */
+    .container-menu_button {
+        display: inline;
+        /* border: 2px solid red; */
+        width: 70px;
+        height: 70px;
+        justify-self: start;
+        position: relative;
+        grid-area: menu_item;
+    }
+
+    .outer-menu_button {
+        border: var(--border-btn-color);
+        border-radius: 10px;
+        background-color: transparent;
+        width: 50px;
+        height: 50px;
+        margin: 10px 15px auto;
+        position: absolute;
+    }
+    
+    .inner-menu_button {
+        width: 16px;
+        height: 16px;
+        margin: 32% auto;
+        background-color: transparent;
+        padding: auto;
+        transition: .3s ease;
+    }
+    
+    .outer-menu_button:hover {
+        border-color: var(--border-items-color-hover);
+    }
+    
+    .inner-menu_button:hover {
+        transform: scale(1.3);
+        -webkit-transform: scale(1.3);
+        -ms-transform: scale(1.3);
+    }
+
+    .logo {
+        justify-self: center;
+        align-self: center;
+        grid-area: logo_item;
+    }
+
+    /* Basket button design */
+    .container-basket_button {
+        grid-area: basket_item;
+    }
+
+    /*----------------------- Menu Sidebar design -----------------------*/
+    .menu-sidebar {
+        /* position: absolute; */
+        top: 0;
+        left: -450px;
+        height: 100vh;
+        width: 450px;
+        background-color: var(--sidebar-color);
+        backdrop-filter: blur(20px);
+        color: var(--header-color);
+        display: grid;
+        border-right: var(--border-items-color);
+        grid-template-columns: 1fr;
+        grid-template-rows: 70px 70px 300px;
+        visibility: hidden;
+        transition: transform .3s, visibility .3s;
+        z-index: 10;
+    }
+
+    .menu-sidebar.open {
+        transform: translateX(100%);
+        visibility: visible;
+        z-index: 10;
+    }
+
+    .menu-sidebar .menu-sidebar-item.title{
+        grid-row: 1/1;
+        width: 100%;
+        /* border: 1px solid red; */
+    }
+    
+    /*------------------ Title design --------------*/
+    .menu-sidebar .menu-sidebar-item.title .title-container{
+        height: 70px;
+        display: flex;
+        align-items: center;
+        /* border: 1px solid blueviolet; */
+        margin-left: 20px;
+        margin-right: 30px;
+    }
+    
+    .menu-sidebar .menu-sidebar-item.title h3{
+        font-size: 1.4rem;
+        font-weight: 400;
+        width: 100px;
+        /* margin: 30px; */
+        margin-left: auto;
+        text-align: end;
+        /* border: 1px solid red; */
+    }
+    
+    .menu-sidebar .menu-sidebar-item.title .container-menu-cross_button {
+        /* border: 2px solid red; */
+        width: 70px;
+        height: 70px;
+        left: 0;
+        position: relative;
+    }
+    
+    .menu-sidebar .menu-sidebar-item.title .outer-menu-cross_button {
+        border: var(--border-items-color);
+        border-radius: 10px;
+        background-color: black;
+        width: 50px;
+        height: 50px;
+        margin: 10px 0px auto;
+        position: absolute;
+    }
+    
+    .menu-sidebar .menu-sidebar-item.title .inner-menu-cross_button {
+        width: 24px;
+        height: 24px;
+        margin: 25% auto;
+        background-color: black;
+        padding: auto;
+        transition: .3s ease;
+    }
+    
+    .menu-sidebar .menu-sidebar-item.title .outer-menu-cross_button:hover {
+        border-color: var(--border-items-color-hover);
+    }
+    
+    .menu-sidebar .menu-sidebar-item.title .inner-menu-cross_button:hover {
+        transform: scale(1.3);
+        -webkit-transform: scale(1.3);
+        -ms-transform: scale(1.3);
+    }
+
+
+    /*------------- Search Bar design --------------*/
+    .menu-sidebar .menu-sidebar-item.search {
+        grid-row: 2/2;
+        width: 100%;
+        /* border: 1px solid red; */
+    }
+
+    .menu-sidebar .menu-sidebar-item.search .search-sidebar-container{
+        height: 70px;
+        display: flex;
+        /* border: 1px solid blueviolet; */
+        margin-left: 20px;
+        margin-right: 30px;
+    }
+
+    .container-search-sidebar {
+        /* border: 2px solid wheat; */
+        width: 100%;
+        /* max-width: 470px; */
+        height: 70px;
+        position: relative;
+        grid-area: search_item;
+    }
+    
+    .outer-search-sidebar {
+        border: 1px solid #2c2d2e;
+        border-radius: 10px;
+        background-color: transparent;
+        width: 100%;
+        min-width: 290px;
+        height: 50px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        position: absolute;
+    }
+    
+    .outer-search-sidebar:hover {
+        border: var(--border-items-color-hover);
+    }
+    
+    .search-bar-sidebar {
+        width: 100%;
+        max-width: 450px;
+        height: 30px;
+        margin: 8px auto;
+        display: flex;
+        align-items: center;
+    }
+    
+    .search-bar-sidebar input {
+        background: transparent;
+        border: 0;
+        padding: 10px;
+        flex: 1;
+        outline: none;
+        color: var(--text-color);
+        font-family: "Poppins";
+        font-size: 16px;
+        font-weight: 300;
+    }
+    
+    .search-bar-sidebar button {
+        background-color: transparent;
+        border: 0;
+        padding-right: 10px;
+        padding-top: 7px;
+        transition: .3s ease;
+    }
+    
+    .search-bar-sidebar button:hover {
+        transform: scale(1.3);
+        -webkit-transform: scale(1.3);
+        -ms-transform: scale(1.3);
+    }
+
+    /*---------------------- List design ---------------------*/
+    .menu-sidebar .menu-sidebar-item.list{
+        grid-row: 3/3;
+        width: 100%;
+        /* border: 1px solid red; */
+    }
+    .menu-sidebar .menu-sidebar-item.list .list-sidebar-container{
+        height: 300px;
+        display: flex;
+        /* border: 1px solid blueviolet; */
+        margin-left: 20px;
+        margin-right: 30px;
+        justify-content: center;
+    }
+
+    .menu-sidebar .menu-sidebar-item.list .list-sidebar-container ul li{
+        display: block;
+        list-style-type: none;
+        margin-top: 2.5rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .menu-sidebar .menu-sidebar-item.list .list-sidebar-container ul li a{
+        text-decoration: none;
+        font-weight: 400;
+        font-size: 30px;
+        color: var(--text-color);
+    }
+
+} 

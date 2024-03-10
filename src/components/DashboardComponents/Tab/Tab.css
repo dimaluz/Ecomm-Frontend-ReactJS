@@ -1,0 +1,66 @@
+.outer-dashboard-tab {
+    border: 1px solid #2c2d2e;
+    border-radius: 10px;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+.inner-dashboard-tab {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    /* border: 1px solid yellow; */
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr; 
+    transition: .3s ease;
+}
+
+.inner-dashboard-tab .title{
+    grid-column: 1/1;
+    grid-row: 1/1;
+    justify-self: start;
+    align-self: center;
+    color: white;
+    /* border: 1px solid orange; */
+}
+
+.inner-dashboard-tab .percentage{
+    grid-column: 2/2;
+    grid-row: 1/1;
+    justify-self: center;
+    align-self: center;
+    color: greenyellow;
+    /* border: 1px solid blue; */
+}
+
+.inner-dashboard-tab .result{
+    grid-column: 1/3;
+    grid-row: 2/2;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: white;
+    /* border: 1px solid red; */
+}
+
+.inner-dashboard-tab .title{
+    color: var(--text-color);
+    font-weight: 300;
+}
+
+.inner-dashboard-tab .result .currency{
+    color: var(--text-color);
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.inner-dashboard-tab .result h2{
+    font-weight: 600;
+}

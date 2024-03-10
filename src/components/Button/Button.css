@@ -1,0 +1,28 @@
+/* .container-price_button {
+    border: 2px solid red;
+    width: 400px;
+    height: 70px;
+    margin-left: 25px;
+    position: relative;
+} */
+
+
+.inner-button {
+    /* border: 2px solid blue; */
+    display: block;
+    width: 100%;
+    height: 45px;
+    background-color: transparent;
+    margin: 10px auto;
+    position: absolute;
+}
+
+.inner-button button {
+    border: 0;
+    background-color: rgba(111, 3, 244, 0.9);
+    color: #e5e7eb;
+    border-radius: 40px;
+    width: 100%;
+    height: 45px;
+    font-size: 1.05rem;
+}

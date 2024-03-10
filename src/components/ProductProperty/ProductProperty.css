@@ -1,0 +1,28 @@
+
+.property-box-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 30px 1fr;
+    /* border: 1px solid red; */
+}
+
+.property-box-container .property-title{
+    grid-row: 1/1;
+    color: white;
+    margin-left: 30px;
+}
+
+.property-box-container .properties {
+    grid-row: 2/2;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(10px, 1fr));
+    margin-left: 2rem;
+    margin-right: 2rem;
+    justify-items: center;
+    gap: 0.5rem;
+    /* align-items: center; */
+    /* border: 1px solid blue; */
+}
+
+

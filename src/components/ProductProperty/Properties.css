@@ -1,0 +1,6 @@
+.property-box {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: repeat(auto-fit, minmax(0, 1fr));
+    gap: 2rem;
+}

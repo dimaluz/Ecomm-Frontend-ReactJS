@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --border-items-color: 1px solid #6e6f71;
+    --border-items-color-hover: 1px solid #e5e7eb;
+    --text-color: #9ea1a7;
+    --header-color: whitesmoke;
+    --sidebar-color: rgba(0,0,0, 0.7);
+    --btn-color: rgba(111, 3, 244, 0.9);
+    --border-btn-color: 1px solid #2c2d2e;
+}
+
+* {
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+ 
+body {
+    background-color: rgb(28, 27, 27);
+    background-image: url("../public/images/bg-texture.jpg");
+    background-size: cover;
+    font-family: "Poppins";
+    height: 100vh;
+}

@@ -1,0 +1,14 @@
+.checkbox-container{
+    position: absolute;
+    width: 140px;
+    height: 50px;
+}
+
+.checkbox-container label input {
+    position: relative;
+    width: 120px;
+    height: 40px;
+    background-color: linear-gradient(0deg, #000, #333);
+    outline: none;
+    border-radius: 20px;
+}

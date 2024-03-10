@@ -1,0 +1,36 @@
+.outer-product-card {
+    border: 1px solid #2c2d2e;
+    border-radius: 10px;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+.inner-product-card {
+    width: 70%;
+    height: 70%;
+    margin: 12% 14% 14% 15%;
+    background-color: transparent;
+    padding: 1rem; 
+    transition: .3s ease;
+}
+
+.inner-product-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.outer-product-card:hover {
+    border-color: #e5e7eb;
+    background-color: black;
+}
+
+.inner-product-card:hover {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    background-color: transparent;
+}

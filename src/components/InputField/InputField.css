@@ -1,0 +1,60 @@
+.outer-input-field{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.inner-input-field{
+    position: relative;
+    height: 100%;
+    line-height: 50px;
+}
+
+.outer-input-field .inner-input-field input{
+    position: absolute;
+    width: 100%;
+    outline: none;
+    font-size: 20px;
+    color: var(--text-color);
+    padding: 0 30px;
+    line-height: 50px;
+    border: var(--border-btn-color);
+    border-radius: 10px;
+    background: transparent;
+    transition: 0.5s ease;
+    z-index: 1111;
+}
+
+.outer-input-field .inner-input-field .labelline{
+    position: absolute;
+    font-size: 1.2rem;
+    font-weight: 200;
+    color: var(--text-color);
+    padding: 0 25px;
+    margin: 0 20px;
+    background-color: transparent;
+    transition: 0.5s ease;
+}
+
+.outer-input-field .inner-input-field input:focus,
+.outer-input-field .inner-input-field input:valid{
+    color: var(--header-color);
+    /* border: var(--border-items-color-hover); */
+}
+
+.outer-input-field .inner-input-field input:focus{
+    border: var(--border-items-color-hover);
+}
+
+.inner-input-field input:focus + .labelline,
+.inner-input-field input:valid + .labelline{
+    color: var(--text-color);
+    font-size: .9rem;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 12px;
+    background-color: black;
+    border-radius: 10%;
+    transform: translate(-15px, -16px) scale(0.88);
+    z-index: 1111;
+}
